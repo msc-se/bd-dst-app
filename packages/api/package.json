@@ -1,0 +1,11 @@
+{
+  "name": "@bd-dst-app/api",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hive-driver": "^0.1.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.9"
+  }
+}
