@@ -1,6 +1,9 @@
 {
   "name": "@bd-dst-app/api",
   "version": "1.0.0",
+  "scripts": {
+    "dev": "ts-node -r tsconfig-paths/register src/app.ts"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "hive-driver": "^0.1.4"
