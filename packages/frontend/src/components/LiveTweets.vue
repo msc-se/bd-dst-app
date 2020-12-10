@@ -19,7 +19,7 @@ export interface TweetPayload {
 }
 
 export default defineComponent({
-  name: 'Kafka',
+  name: 'LiveTweets',
   setup() {
     const countryTweets = ref<Record<string, number>>({})
 

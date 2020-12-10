@@ -60,6 +60,7 @@ export class KafkaService {
   restart(): Promise<void> {
     console.log('Restarting KafkaService')
     this.currentDate = new Date().setHours(0, 0, 0, 0)
+    this.startedAt = Date.now()
     this._countryTweets.forEach((_, key) => this._countryTweets.set(key, 0))
     this.onRestart(this.countryTweets)
     return this.stop().then(() => this.start())
