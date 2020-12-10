@@ -1,16 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <Hive msg="Welcome to Your Vue.js + TypeScript App" />
+  <Kafka msg="Welcome to Your Vue.js + TypeScript App" />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Hive from './components/Hive.vue'
+import Kafka from './components/Kafka.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
-    Hive
+    Kafka
   }
 })
 </script>

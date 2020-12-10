@@ -20,10 +20,6 @@ export class HiveService {
     return result
   }
 
-  terminate(): void {
-    this.session?.close()
-  }
-
   private getSession(): Promise<IHiveSession> {
     if (this.session) return Promise.resolve(this.session)
 
