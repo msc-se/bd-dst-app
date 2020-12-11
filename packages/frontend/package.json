@@ -9,9 +9,10 @@
     "deploy": "cp -a dist/. /var/www/web-app/"
   },
   "dependencies": {
-    "@types/topojson": "^3.2.2",
+    "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "d3": "^6.3.1",
+    "dayjs": "^1.9.7",
     "topojson-client": "^3.1.0",
     "vue": "^3.0.0"
   },

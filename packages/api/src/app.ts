@@ -1,21 +1,45 @@
 import express from 'express'
 import { HiveService } from 'src/HiveService'
+import expressWs from 'express-ws'
+import cors from 'cors'
+import { KafkaService, PayloadHandler } from 'src/KafkaService'
 
-const app = express()
+const { app, getWss } = expressWs(express())
 const PORT = 8000
 
-const hiveService = new HiveService()
+const onMessage: PayloadHandler = (payload) => {
+  getWss().clients.forEach((client) => client.send(JSON.stringify(payload)))
+}
 
-app.get('/', async (req, res) => {
-  const data = await hiveService.getCovidData()
+const hiveService = new HiveService()
+const kafkaService = new KafkaService(onMessage)
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+app.get('/historic', cors(), async (req, res) => {
+  const date = String(req.query.date)
+
+  if (isNaN(Date.parse(date))) {
+    res.sendStatus(400)
+    return
+  }
+
+  const data = await hiveService.getCovidData(date)
   res.send(data)
 })
 
-app.listen(PORT, async () => {
-  console.log(`⚡ [server]: Server is running at https://localhost:${PORT}`)
+app.ws('/live', (ws) => {
+  ws.send(JSON.stringify(kafkaService.countryTweets))
+  ws.onmessage = (message) => console.log(`Message received: ${message.data}`)
 })
 
-app.on('close', () => {
-  console.log('close')
-  hiveService.terminate()
+app.listen(PORT, async () => {
+  try {
+    // await kafkaService.start()
+    // setTimeout(async () => await kafkaService.restart(), 10000)
+  } catch (e) {
+    console.error(e)
+  }
+
+  console.log(`⚡ [server]: Server is running at https://localhost:${PORT}`)
 })

@@ -1,16 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <Hive msg="Welcome to Your Vue.js + TypeScript App" />
+  <div id="container">
+    <HistoricData id="historic-data" />
+    <LiveTweets id="live-tweets" />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Hive from './components/Hive.vue'
+import LiveTweets from './components/LiveTweets.vue'
+import HistoricData from '@/components/HistoricData.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
-    Hive
+    HistoricData,
+    LiveTweets
   }
 })
 </script>
@@ -22,6 +26,16 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0 40px;
+}
+
+#container {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+#live-tweets {
+  width: 200px;
 }
 </style>
