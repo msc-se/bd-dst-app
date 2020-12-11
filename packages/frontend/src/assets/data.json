@@ -1,0 +1,1902 @@
+[
+  {
+    "code": "glo",
+    "code3": "-1",
+    "country": "Global",
+    "cases": 67073728,
+    "new_cases": 533694,
+    "population": 7711667091,
+    "tweets": 552,
+    "new_cases_per_tweet": 966.84
+  },
+  {
+    "code": "AD",
+    "code3": "20",
+    "country": "Andorra",
+    "cases": 7050,
+    "new_cases": 45,
+    "population": 77265,
+    "tweets": 2,
+    "new_cases_per_tweet": 22.50
+  },
+  {
+    "code": "AF",
+    "code3": "4",
+    "country": "Afghanistan",
+    "cases": 47306,
+    "new_cases": 234,
+    "population": 38928341,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "AL",
+    "code3": "8",
+    "country": "Albania",
+    "cases": 42988,
+    "new_cases": 840,
+    "population": 2877800,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "BA",
+    "code3": "70",
+    "country": "Bosnia and Herzegovina",
+    "cases": 94507,
+    "new_cases": 739,
+    "population": 3280815,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "BS",
+    "code3": "44",
+    "country": "Bahamas",
+    "cases": 7570,
+    "new_cases": 0,
+    "population": 393248,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "BW",
+    "code3": "72",
+    "country": "Botswana",
+    "cases": 11531,
+    "new_cases": 0,
+    "population": 2351625,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "BY",
+    "code3": "112",
+    "country": "Belarus",
+    "cases": 147157,
+    "new_cases": 1878,
+    "population": 9449321,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "BZ",
+    "code3": "84",
+    "country": "Belize",
+    "cases": 7769,
+    "new_cases": 168,
+    "population": 397621,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "CA",
+    "code3": "124",
+    "country": "Canada",
+    "cases": 418848,
+    "new_cases": 6305,
+    "population": 37855702,
+    "tweets": 26,
+    "new_cases_per_tweet": 242.50
+  },
+  {
+    "code": "CO",
+    "code3": "170",
+    "country": "Colombia",
+    "cases": 1371103,
+    "new_cases": 8854,
+    "population": 50882884,
+    "tweets": 7,
+    "new_cases_per_tweet": 1264.86
+  },
+  {
+    "code": "CU",
+    "code3": "192",
+    "country": "Cuba",
+    "cases": 8782,
+    "new_cases": 68,
+    "population": 11326616,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "DE",
+    "code3": "276",
+    "country": "Germany",
+    "cases": 1194550,
+    "new_cases": 10910,
+    "population": 83783945,
+    "tweets": 10,
+    "new_cases_per_tweet": 1091.00
+  },
+  {
+    "code": "DO",
+    "code3": "214",
+    "country": "Dominican Republic",
+    "cases": 148453,
+    "new_cases": 798,
+    "population": 10847904,
+    "tweets": 3,
+    "new_cases_per_tweet": 266.00
+  },
+  {
+    "code": "DZ",
+    "code3": "12",
+    "country": "Algeria",
+    "cases": 88252,
+    "new_cases": 750,
+    "population": 43851043,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "GA",
+    "code3": "266",
+    "country": "Gabon",
+    "cases": 9254,
+    "new_cases": 0,
+    "population": 2225728,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "GH",
+    "code3": "288",
+    "country": "Ghana",
+    "cases": 52274,
+    "new_cases": 178,
+    "population": 31072945,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "GN",
+    "code3": "324",
+    "country": "Guinea",
+    "cases": 13233,
+    "new_cases": 0,
+    "population": 13132792,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "GW",
+    "code3": "624",
+    "country": "Guinea-Bissau",
+    "cases": 2441,
+    "new_cases": 0,
+    "population": 1967998,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "GY",
+    "code3": "328",
+    "country": "Guyana",
+    "cases": 5665,
+    "new_cases": 28,
+    "population": 786559,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "HN",
+    "code3": "340",
+    "country": "Honduras",
+    "cases": 111023,
+    "new_cases": 1063,
+    "population": 9904608,
+    "tweets": 1,
+    "new_cases_per_tweet": 1063.00
+  },
+  {
+    "code": "HT",
+    "code3": "332",
+    "country": "Haiti",
+    "cases": 9370,
+    "new_cases": 0,
+    "population": 11402533,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "HU",
+    "code3": "348",
+    "country": "Hungary",
+    "cases": 250278,
+    "new_cases": 6697,
+    "population": 9660350,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "ID",
+    "code3": "360",
+    "country": "Indonesia",
+    "cases": 575796,
+    "new_cases": 6089,
+    "population": 273523621,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "IL",
+    "code3": "376",
+    "country": "Israel",
+    "cases": 344906,
+    "new_cases": 1080,
+    "population": 8655541,
+    "tweets": 1,
+    "new_cases_per_tweet": 1080.00
+  },
+  {
+    "code": "IQ",
+    "code3": "368",
+    "country": "Iraq",
+    "cases": 564200,
+    "new_cases": 1680,
+    "population": 40222503,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "IT",
+    "code3": "380",
+    "country": "Italy",
+    "cases": 1728878,
+    "new_cases": 18887,
+    "population": 60461828,
+    "tweets": 17,
+    "new_cases_per_tweet": 1111.00
+  },
+  {
+    "code": "JO",
+    "code3": "400",
+    "country": "Jordan",
+    "cases": 240089,
+    "new_cases": 2576,
+    "population": 10203140,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "KG",
+    "code3": "417",
+    "country": "Kyrgyzstan",
+    "cases": 75395,
+    "new_cases": 621,
+    "population": 6524191,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "KN",
+    "code3": "659",
+    "country": "Saint Kitts and Nevis",
+    "cases": 25,
+    "new_cases": 0,
+    "population": 53192,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "LT",
+    "code3": "440",
+    "country": "Lithuania",
+    "cases": 74649,
+    "new_cases": 2219,
+    "population": 2722291,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "LV",
+    "code3": "428",
+    "country": "Latvia",
+    "cases": 21313,
+    "new_cases": 526,
+    "population": 1886202,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "LY",
+    "code3": "434",
+    "country": "Libya",
+    "cases": 86580,
+    "new_cases": 1051,
+    "population": 6871287,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "MK",
+    "code3": "807",
+    "country": "North Macedonia",
+    "cases": 67968,
+    "new_cases": 657,
+    "population": 2083380,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "MM",
+    "code3": "104",
+    "country": "Burma",
+    "cases": 99155,
+    "new_cases": 1108,
+    "population": 54409794,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "MN",
+    "code3": "496",
+    "country": "Mongolia",
+    "cases": 887,
+    "new_cases": 38,
+    "population": 3278292,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "MU",
+    "code3": "480",
+    "country": "Mauritius",
+    "cases": 508,
+    "new_cases": 0,
+    "population": 1271767,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "MW",
+    "code3": "454",
+    "country": "Malawi",
+    "cases": 6051,
+    "new_cases": 2,
+    "population": 19129955,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "NA",
+    "code3": "516",
+    "country": "Namibia",
+    "cases": 15078,
+    "new_cases": 128,
+    "population": 2540916,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "PA",
+    "code3": "591",
+    "country": "Panama",
+    "cases": 177719,
+    "new_cases": 1812,
+    "population": 4314768,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "PE",
+    "code3": "604",
+    "country": "Peru",
+    "cases": 972688,
+    "new_cases": 1828,
+    "population": 32971846,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "PT",
+    "code3": "620",
+    "country": "Portugal",
+    "cases": 322474,
+    "new_cases": 3834,
+    "population": 10196707,
+    "tweets": 1,
+    "new_cases_per_tweet": 3834.00
+  },
+  {
+    "code": "QA",
+    "code3": "634",
+    "country": "Qatar",
+    "cases": 139908,
+    "new_cases": 125,
+    "population": 2881060,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "RU",
+    "code3": "643",
+    "country": "Russia",
+    "cases": 2439163,
+    "new_cases": 28701,
+    "population": 145934460,
+    "tweets": 1000,
+    "new_cases_per_tweet": 2439
+  },
+  {
+    "code": "SO",
+    "code3": "706",
+    "country": "Somalia",
+    "cases": 4525,
+    "new_cases": 0,
+    "population": 15893219,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "TD",
+    "code3": "148",
+    "country": "Chad",
+    "cases": 1725,
+    "new_cases": 3,
+    "population": 16425859,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "UA",
+    "code3": "804",
+    "country": "Ukraine",
+    "cases": 834913,
+    "new_cases": 11928,
+    "population": 43733759,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "VU",
+    "code3": "548",
+    "country": "Vanuatu",
+    "cases": 1,
+    "new_cases": 0,
+    "population": 292680,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "XK",
+    "code3": "383",
+    "country": "Kosovo",
+    "cases": 42805,
+    "new_cases": 468,
+    "population": 1810366,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "ZA",
+    "code3": "710",
+    "country": "South Africa",
+    "cases": 814565,
+    "new_cases": 4116,
+    "population": 59308690,
+    "tweets": 4,
+    "new_cases_per_tweet": 1029.00
+  },
+  {
+    "code": "ZW",
+    "code3": "716",
+    "country": "Zimbabwe",
+    "cases": 10718,
+    "new_cases": 101,
+    "population": 14862927,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "AE",
+    "code3": "784",
+    "country": "United Arab Emirates",
+    "cases": 176429,
+    "new_cases": 1153,
+    "population": 9890400,
+    "tweets": 3,
+    "new_cases_per_tweet": 384.33
+  },
+  {
+    "code": "BN",
+    "code3": "96",
+    "country": "Brunei",
+    "cases": 151,
+    "new_cases": 0,
+    "population": 437483,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "CR",
+    "code3": "188",
+    "country": "Costa Rica",
+    "cases": 143685,
+    "new_cases": 0,
+    "population": 5094114,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "CV",
+    "code3": "132",
+    "country": "Cabo Verde",
+    "cases": 11063,
+    "new_cases": 27,
+    "population": 555988,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "ET",
+    "code3": "231",
+    "country": "Ethiopia",
+    "cases": 113295,
+    "new_cases": 555,
+    "population": 114963583,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "GE",
+    "code3": "268",
+    "country": "Georgia",
+    "cases": 162475,
+    "new_cases": 4321,
+    "population": 3989175,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "HR",
+    "code3": "191",
+    "country": "Croatia",
+    "cases": 150353,
+    "new_cases": 2899,
+    "population": 4105268,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "KE",
+    "code3": "404",
+    "country": "Kenya",
+    "cases": 88380,
+    "new_cases": 396,
+    "population": 53771300,
+    "tweets": 2,
+    "new_cases_per_tweet": 198.00
+  },
+  {
+    "code": "LI",
+    "code3": "438",
+    "country": "Liechtenstein",
+    "cases": 1396,
+    "new_cases": 18,
+    "population": 38137,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "LS",
+    "code3": "426",
+    "country": "Lesotho",
+    "cases": 2150,
+    "new_cases": 0,
+    "population": 2142252,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "MV",
+    "code3": "462",
+    "country": "Maldives",
+    "cases": 13198,
+    "new_cases": 39,
+    "population": 540542,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "MY",
+    "code3": "458",
+    "country": "Malaysia",
+    "cases": 72694,
+    "new_cases": 1335,
+    "population": 32365998,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "NE",
+    "code3": "562",
+    "country": "Niger",
+    "cases": 1856,
+    "new_cases": 67,
+    "population": 24206636,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "NG",
+    "code3": "566",
+    "country": "Nigeria",
+    "cases": 69255,
+    "new_cases": 318,
+    "population": 206139587,
+    "tweets": 1,
+    "new_cases_per_tweet": 318.00
+  },
+  {
+    "code": "SD",
+    "code3": "729",
+    "country": "Sudan",
+    "cases": 19468,
+    "new_cases": 272,
+    "population": 43849269,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "SN",
+    "code3": "686",
+    "country": "Senegal",
+    "cases": 16477,
+    "new_cases": 80,
+    "population": 16743930,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "SV",
+    "code3": "222",
+    "country": "El Salvador",
+    "cases": 40131,
+    "new_cases": 413,
+    "population": 6486201,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "TH",
+    "code3": "764",
+    "country": "Thailand",
+    "cases": 4107,
+    "new_cases": 21,
+    "population": 69799978,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "TL",
+    "code3": "626",
+    "country": "Timor-Leste",
+    "cases": 31,
+    "new_cases": 0,
+    "population": 1318442,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "TZ",
+    "code3": "834",
+    "country": "Tanzania",
+    "cases": 509,
+    "new_cases": 0,
+    "population": 59734213,
+    "tweets": 1,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "UG",
+    "code3": "800",
+    "country": "Uganda",
+    "cases": 22499,
+    "new_cases": 311,
+    "population": 45741000,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "UZ",
+    "code3": "860",
+    "country": "Uzbekistan",
+    "cases": 74053,
+    "new_cases": 302,
+    "population": 33469199,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "AG",
+    "code3": "28",
+    "country": "Antigua and Barbuda",
+    "cases": 144,
+    "new_cases": 0,
+    "population": 97928,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "AT",
+    "code3": "40",
+    "country": "Austria",
+    "cases": 303430,
+    "new_cases": 2741,
+    "population": 9006400,
+    "tweets": 3,
+    "new_cases_per_tweet": 913.67
+  },
+  {
+    "code": "BB",
+    "code3": "52",
+    "country": "Barbados",
+    "cases": 285,
+    "new_cases": 0,
+    "population": 287371,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "BD",
+    "code3": "50",
+    "country": "Bangladesh",
+    "cases": 477545,
+    "new_cases": 1756,
+    "population": 164689383,
+    "tweets": 1,
+    "new_cases_per_tweet": 1756.00
+  },
+  {
+    "code": "BE",
+    "code3": "56",
+    "country": "Belgium",
+    "cases": 591756,
+    "new_cases": 1814,
+    "population": 11589616,
+    "tweets": 3,
+    "new_cases_per_tweet": 604.67
+  },
+  {
+    "code": "BI",
+    "code3": "108",
+    "country": "Burundi",
+    "cases": 694,
+    "new_cases": 0,
+    "population": 11890781,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "CD",
+    "code3": "180",
+    "country": "Congo (Kinshasa)",
+    "cases": 13527,
+    "new_cases": 114,
+    "population": 89561404,
+    "tweets": 1,
+    "new_cases_per_tweet": 114.00
+  },
+  {
+    "code": "CH",
+    "code3": "756",
+    "country": "Switzerland",
+    "cases": 344497,
+    "new_cases": 0,
+    "population": 8654618,
+    "tweets": 7,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "CM",
+    "code3": "120",
+    "country": "Cameroon",
+    "cases": 24752,
+    "new_cases": 0,
+    "population": 26545864,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "CY",
+    "code3": "196",
+    "country": "Cyprus",
+    "cases": 12451,
+    "new_cases": 270,
+    "population": 1207361,
+    "tweets": 1,
+    "new_cases_per_tweet": 270.00
+  },
+  {
+    "code": "CZ",
+    "code3": "203",
+    "country": "Czechia",
+    "cases": 546833,
+    "new_cases": 2654,
+    "population": 10708982,
+    "tweets": 1,
+    "new_cases_per_tweet": 2654.00
+  },
+  {
+    "code": "DK",
+    "code3": "208",
+    "country": "Denmark",
+    "cases": 91131,
+    "new_cases": 1749,
+    "population": 5792203,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "EG",
+    "code3": "818",
+    "country": "Egypt",
+    "cases": 118432,
+    "new_cases": 418,
+    "population": 102334403,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "GB",
+    "code3": "826",
+    "country": "United Kingdom",
+    "cases": 1727751,
+    "new_cases": 17372,
+    "population": 67886004,
+    "tweets": 39,
+    "new_cases_per_tweet": 445.44
+  },
+  {
+    "code": "GD",
+    "code3": "308",
+    "country": "Grenada",
+    "cases": 41,
+    "new_cases": 0,
+    "population": 112519,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "IN",
+    "code3": "356",
+    "country": "India",
+    "cases": 9677203,
+    "new_cases": 32981,
+    "population": 1380004385,
+    "tweets": 6,
+    "new_cases_per_tweet": 5496.83
+  },
+  {
+    "code": "JM",
+    "code3": "388",
+    "country": "Jamaica",
+    "cases": 11120,
+    "new_cases": 57,
+    "population": 2961161,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "JP",
+    "code3": "392",
+    "country": "Japan",
+    "cases": 162917,
+    "new_cases": 2047,
+    "population": 126476458,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "LR",
+    "code3": "430",
+    "country": "Liberia",
+    "cases": 1676,
+    "new_cases": 0,
+    "population": 5057677,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "LU",
+    "code3": "442",
+    "country": "Luxembourg",
+    "cases": 37017,
+    "new_cases": 0,
+    "population": 625976,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "MA",
+    "code3": "504",
+    "country": "Morocco",
+    "cases": 379657,
+    "new_cases": 2919,
+    "population": 36910558,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "MG",
+    "code3": "450",
+    "country": "Madagascar",
+    "cases": 17513,
+    "new_cases": 0,
+    "population": 27691019,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "MT",
+    "code3": "470",
+    "country": "Malta",
+    "cases": 10520,
+    "new_cases": 97,
+    "population": 441539,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "MX",
+    "code3": "484",
+    "country": "Mexico",
+    "cases": 1175850,
+    "new_cases": 7455,
+    "population": 127792286,
+    "tweets": 29,
+    "new_cases_per_tweet": 257.07
+  },
+  {
+    "code": "MZ",
+    "code3": "508",
+    "country": "Mozambique",
+    "cases": 16244,
+    "new_cases": 111,
+    "population": 31255435,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "NP",
+    "code3": "524",
+    "country": "Nepal",
+    "cases": 240981,
+    "new_cases": 1096,
+    "population": 29136808,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "NZ",
+    "code3": "554",
+    "country": "New Zealand",
+    "cases": 2079,
+    "new_cases": 1,
+    "population": 4822233,
+    "tweets": 1,
+    "new_cases_per_tweet": 1.00
+  },
+  {
+    "code": "PG",
+    "code3": "598",
+    "country": "Papua New Guinea",
+    "cases": 671,
+    "new_cases": 0,
+    "population": 8947027,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "RO",
+    "code3": "642",
+    "country": "Romania",
+    "cases": 513576,
+    "new_cases": 5231,
+    "population": 19237682,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "RS",
+    "code3": "688",
+    "country": "Serbia",
+    "cases": 219652,
+    "new_cases": 5809,
+    "population": 8737370,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "SE",
+    "code3": "752",
+    "country": "Sweden",
+    "cases": 278912,
+    "new_cases": 0,
+    "population": 10099270,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "SG",
+    "code3": "702",
+    "country": "Singapore",
+    "cases": 58260,
+    "new_cases": 5,
+    "population": 5850343,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "SI",
+    "code3": "705",
+    "country": "Slovenia",
+    "cases": 85805,
+    "new_cases": 1030,
+    "population": 2078932,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "SK",
+    "code3": "703",
+    "country": "Slovakia",
+    "cases": 116731,
+    "new_cases": 1269,
+    "population": 5459643,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "SM",
+    "code3": "674",
+    "country": "San Marino",
+    "cases": 1789,
+    "new_cases": 0,
+    "population": 33938,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "SZ",
+    "code3": "748",
+    "country": "Eswatini",
+    "cases": 6501,
+    "new_cases": 6,
+    "population": 1160164,
+    "tweets": 1,
+    "new_cases_per_tweet": 6.00
+  },
+  {
+    "code": "TJ",
+    "code3": "762",
+    "country": "Tajikistan",
+    "cases": 12428,
+    "new_cases": 39,
+    "population": 9537642,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "TT",
+    "code3": "780",
+    "country": "Trinidad and Tobago",
+    "cases": 6767,
+    "new_cases": 16,
+    "population": 1399491,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "US",
+    "code3": "840",
+    "country": "US",
+    "cases": 14757000,
+    "new_cases": 175663,
+    "population": 329466283,
+    "tweets": 258,
+    "new_cases_per_tweet": 680.86
+  },
+  {
+    "code": "VA",
+    "code3": "336",
+    "country": "Holy See",
+    "cases": 27,
+    "new_cases": 0,
+    "population": 809,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "YE",
+    "code3": "887",
+    "country": "Yemen",
+    "cases": 2337,
+    "new_cases": 33,
+    "population": 29825968,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "ZM",
+    "code3": "894",
+    "country": "Zambia",
+    "cases": 17916,
+    "new_cases": 18,
+    "population": 18383956,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "AO",
+    "code3": "24",
+    "country": "Angola",
+    "cases": 15591,
+    "new_cases": 55,
+    "population": 32866268,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "AR",
+    "code3": "32",
+    "country": "Argentina",
+    "cases": 1463110,
+    "new_cases": 3278,
+    "population": 45195777,
+    "tweets": 8,
+    "new_cases_per_tweet": 409.75
+  },
+  {
+    "code": "BH",
+    "code3": "48",
+    "country": "Bahrain",
+    "cases": 87930,
+    "new_cases": 198,
+    "population": 1701583,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "BJ",
+    "code3": "204",
+    "country": "Benin",
+    "cases": 3055,
+    "new_cases": 0,
+    "population": 12123198,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "BO",
+    "code3": "68",
+    "country": "Bolivia",
+    "cases": 145560,
+    "new_cases": 68,
+    "population": 11673029,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "CF",
+    "code3": "140",
+    "country": "Central African Republic",
+    "cases": 4922,
+    "new_cases": 0,
+    "population": 4829764,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "CI",
+    "code3": "384",
+    "country": "Cote d'Ivoire",
+    "cases": 21485,
+    "new_cases": 44,
+    "population": 26378275,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "CN",
+    "code3": "156",
+    "country": "China",
+    "cases": 93577,
+    "new_cases": 110,
+    "population": 1404676330,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "DJ",
+    "code3": "262",
+    "country": "Djibouti",
+    "cases": 5701,
+    "new_cases": 9,
+    "population": 988002,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "EC",
+    "code3": "218",
+    "country": "Ecuador",
+    "cases": 197998,
+    "new_cases": 607,
+    "population": 17643060,
+    "tweets": 3,
+    "new_cases_per_tweet": 202.33
+  },
+  {
+    "code": "EH",
+    "code3": "732",
+    "country": "Western Sahara",
+    "cases": 10,
+    "new_cases": 0,
+    "population": 597330,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "ES",
+    "code3": "724",
+    "country": "Spain",
+    "cases": 1684647,
+    "new_cases": 0,
+    "population": 46754783,
+    "tweets": 15,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "GM",
+    "code3": "270",
+    "country": "Gambia",
+    "cases": 3770,
+    "new_cases": 0,
+    "population": 2416664,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "IE",
+    "code3": "372",
+    "country": "Ireland",
+    "cases": 74246,
+    "new_cases": 298,
+    "population": 4937796,
+    "tweets": 7,
+    "new_cases_per_tweet": 42.57
+  },
+  {
+    "code": "IR",
+    "code3": "364",
+    "country": "Iran",
+    "cases": 1040547,
+    "new_cases": 11561,
+    "population": 83992953,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "KW",
+    "code3": "414",
+    "country": "Kuwait",
+    "cases": 144369,
+    "new_cases": 205,
+    "population": 4270563,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "LB",
+    "code3": "422",
+    "country": "Lebanon",
+    "cases": 137112,
+    "new_cases": 2817,
+    "population": 6825442,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "LC",
+    "code3": "662",
+    "country": "Saint Lucia",
+    "cases": 265,
+    "new_cases": 0,
+    "population": 183629,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "LK",
+    "code3": "144",
+    "country": "Sri Lanka",
+    "cases": 27877,
+    "new_cases": 649,
+    "population": 21413250,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "MC",
+    "code3": "492",
+    "country": "Monaco",
+    "cases": 638,
+    "new_cases": 1,
+    "population": 39244,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "ME",
+    "code3": "499",
+    "country": "Montenegro",
+    "cases": 38246,
+    "new_cases": 367,
+    "population": 628062,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "ML",
+    "code3": "466",
+    "country": "Mali",
+    "cases": 5135,
+    "new_cases": 73,
+    "population": 20250834,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "MR",
+    "code3": "478",
+    "country": "Mauritania",
+    "cases": 9516,
+    "new_cases": 157,
+    "population": 4649660,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "NO",
+    "code3": "578",
+    "country": "Norway",
+    "cases": 38323,
+    "new_cases": 250,
+    "population": 5421242,
+    "tweets": 1,
+    "new_cases_per_tweet": 250.00
+  },
+  {
+    "code": "OM",
+    "code3": "512",
+    "country": "Oman",
+    "cases": 124886,
+    "new_cases": 557,
+    "population": 5106622,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "PY",
+    "code3": "600",
+    "country": "Paraguay",
+    "cases": 87920,
+    "new_cases": 707,
+    "population": 7132530,
+    "tweets": 1,
+    "new_cases_per_tweet": 707.00
+  },
+  {
+    "code": "RW",
+    "code3": "646",
+    "country": "Rwanda",
+    "cases": 6129,
+    "new_cases": 45,
+    "population": 12952209,
+    "tweets": 1,
+    "new_cases_per_tweet": 45.00
+  },
+  {
+    "code": "SL",
+    "code3": "694",
+    "country": "Sierra Leone",
+    "cases": 2426,
+    "new_cases": 6,
+    "population": 7976985,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "SR",
+    "code3": "740",
+    "country": "Suriname",
+    "cases": 5324,
+    "new_cases": 0,
+    "population": 586634,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "SS",
+    "code3": "728",
+    "country": "South Sudan",
+    "cases": 3181,
+    "new_cases": 15,
+    "population": 11193729,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "SY",
+    "code3": "760",
+    "country": "Syria",
+    "cases": 8403,
+    "new_cases": 83,
+    "population": 17500657,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "TG",
+    "code3": "768",
+    "country": "Togo",
+    "cases": 3095,
+    "new_cases": 44,
+    "population": 8278737,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "TN",
+    "code3": "788",
+    "country": "Tunisia",
+    "cases": 104002,
+    "new_cases": 1011,
+    "population": 11818618,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "TR",
+    "code3": "792",
+    "country": "Turkey",
+    "cases": 828295,
+    "new_cases": 30402,
+    "population": 84339067,
+    "tweets": 12,
+    "new_cases_per_tweet": 2533.50
+  },
+  {
+    "code": "UY",
+    "code3": "858",
+    "country": "Uruguay",
+    "cases": 7303,
+    "new_cases": 338,
+    "population": 3473727,
+    "tweets": 4,
+    "new_cases_per_tweet": 84.50
+  },
+  {
+    "code": "VC",
+    "code3": "670",
+    "country": "Saint Vincent and the Grenadines",
+    "cases": 87,
+    "new_cases": 0,
+    "population": 110947,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "VE",
+    "code3": "862",
+    "country": "Venezuela",
+    "cases": 104442,
+    "new_cases": 265,
+    "population": 28435943,
+    "tweets": 4,
+    "new_cases_per_tweet": 66.25
+  },
+  {
+    "code": "VN",
+    "code3": "704",
+    "country": "Vietnam",
+    "cases": 1366,
+    "new_cases": 1,
+    "population": 97338583,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "AM",
+    "code3": "51",
+    "country": "Armenia",
+    "cases": 141937,
+    "new_cases": 978,
+    "population": 2963234,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "AU",
+    "code3": "36",
+    "country": "Australia",
+    "cases": 27972,
+    "new_cases": 7,
+    "population": 25459700,
+    "tweets": 8,
+    "new_cases_per_tweet": 0.88
+  },
+  {
+    "code": "AZ",
+    "code3": "31",
+    "country": "Azerbaijan",
+    "cases": 146679,
+    "new_cases": 4356,
+    "population": 10139175,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "BF",
+    "code3": "854",
+    "country": "Burkina Faso",
+    "cases": 3212,
+    "new_cases": 56,
+    "population": 20903278,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "BG",
+    "code3": "100",
+    "country": "Bulgaria",
+    "cases": 161421,
+    "new_cases": 577,
+    "population": 6948445,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "BR",
+    "code3": "076",
+    "country": "Brazil",
+    "cases": 6603540,
+    "new_cases": 26363,
+    "population": 212559409,
+    "tweets": 21,
+    "new_cases_per_tweet": 1255.38
+  },
+  {
+    "code": "BT",
+    "code3": "64",
+    "country": "Bhutan",
+    "cases": 430,
+    "new_cases": 4,
+    "population": 771612,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "CG",
+    "code3": "178",
+    "country": "Congo (Brazzaville)",
+    "cases": 5774,
+    "new_cases": 0,
+    "population": 5518092,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "CL",
+    "code3": "152",
+    "country": "Chile",
+    "cases": 560382,
+    "new_cases": 1714,
+    "population": 19116209,
+    "tweets": 4,
+    "new_cases_per_tweet": 428.50
+  },
+  {
+    "code": "DM",
+    "code3": "212",
+    "country": "Dominica",
+    "cases": 85,
+    "new_cases": 0,
+    "population": 71991,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "EE",
+    "code3": "233",
+    "country": "Estonia",
+    "cases": 14978,
+    "new_cases": 478,
+    "population": 1326539,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "ER",
+    "code3": "232",
+    "country": "Eritrea",
+    "cases": 632,
+    "new_cases": 0,
+    "population": 3546427,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "FI",
+    "code3": "246",
+    "country": "Finland",
+    "cases": 27631,
+    "new_cases": 413,
+    "population": 5540718,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "FJ",
+    "code3": "242",
+    "country": "Fiji",
+    "cases": 44,
+    "new_cases": 0,
+    "population": 896444,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "FR",
+    "code3": "250",
+    "country": "France",
+    "cases": 2345648,
+    "new_cases": 11022,
+    "population": 65273512,
+    "tweets": 16,
+    "new_cases_per_tweet": 688.88
+  },
+  {
+    "code": "GQ",
+    "code3": "226",
+    "country": "Equatorial Guinea",
+    "cases": 5159,
+    "new_cases": 0,
+    "population": 1402985,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "GR",
+    "code3": "300",
+    "country": "Greece",
+    "cases": 115471,
+    "new_cases": 903,
+    "population": 10423056,
+    "tweets": 1,
+    "new_cases_per_tweet": 903.00
+  },
+  {
+    "code": "GT",
+    "code3": "320",
+    "country": "Guatemala",
+    "cases": 125550,
+    "new_cases": 198,
+    "population": 17915567,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "IS",
+    "code3": "352",
+    "country": "Iceland",
+    "cases": 5482,
+    "new_cases": 6,
+    "population": 341250,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "KH",
+    "code3": "116",
+    "country": "Cambodia",
+    "cases": 348,
+    "new_cases": 2,
+    "population": 16718971,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "KM",
+    "code3": "174",
+    "country": "Comoros",
+    "cases": 616,
+    "new_cases": 0,
+    "population": 869595,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "KR",
+    "code3": "410",
+    "country": "Korea, South",
+    "cases": 38161,
+    "new_cases": 615,
+    "population": 51269183,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "KZ",
+    "code3": "398",
+    "country": "Kazakhstan",
+    "cases": 180089,
+    "new_cases": 745,
+    "population": 18776707,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "LA",
+    "code3": "418",
+    "country": "Laos",
+    "cases": 39,
+    "new_cases": 0,
+    "population": 7275556,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "MD",
+    "code3": "498",
+    "country": "Moldova",
+    "cases": 116365,
+    "new_cases": 808,
+    "population": 4033963,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "MH",
+    "code3": "584",
+    "country": "Marshall Islands",
+    "cases": 4,
+    "new_cases": 0,
+    "population": 58413,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "NI",
+    "code3": "558",
+    "country": "Nicaragua",
+    "cases": 5838,
+    "new_cases": 0,
+    "population": 6624554,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "NL",
+    "code3": "528",
+    "country": "Netherlands",
+    "cases": 566628,
+    "new_cases": 6912,
+    "population": 17134873,
+    "tweets": 11,
+    "new_cases_per_tweet": 628.36
+  },
+  {
+    "code": "PH",
+    "code3": "608",
+    "country": "Philippines",
+    "cases": 439834,
+    "new_cases": 1765,
+    "population": 109581085,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "PK",
+    "code3": "586",
+    "country": "Pakistan",
+    "cases": 420294,
+    "new_cases": 3795,
+    "population": 220892331,
+    "tweets": 1,
+    "new_cases_per_tweet": 3795.00
+  },
+  {
+    "code": "PL",
+    "code3": "616",
+    "country": "Poland",
+    "cases": 1063449,
+    "new_cases": 9176,
+    "population": 37846605,
+    "tweets": 1,
+    "new_cases_per_tweet": 9176.00
+  },
+  {
+    "code": "PS",
+    "code3": "275",
+    "country": "West Bank and Gaza",
+    "cases": 98038,
+    "new_cases": 1940,
+    "population": 5101416,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "SA",
+    "code3": "682",
+    "country": "Saudi Arabia",
+    "cases": 358713,
+    "new_cases": 187,
+    "population": 34813867,
+    "tweets": 1,
+    "new_cases_per_tweet": 187.00
+  },
+  {
+    "code": "SB",
+    "code3": "90",
+    "country": "Solomon Islands",
+    "cases": 17,
+    "new_cases": 0,
+    "population": 652858,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "SC",
+    "code3": "690",
+    "country": "Seychelles",
+    "cases": 184,
+    "new_cases": 0,
+    "population": 98340,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "ST",
+    "code3": "678",
+    "country": "Sao Tome and Principe",
+    "cases": 999,
+    "new_cases": 0,
+    "population": 219161,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  },
+  {
+    "code": "TW",
+    "code3": "158",
+    "country": "Taiwan*",
+    "cases": 716,
+    "new_cases": 22,
+    "population": 23816775,
+    "tweets": 0,
+    "new_cases_per_tweet": 0.00
+  }
+]
