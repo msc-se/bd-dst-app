@@ -1,23 +1,40 @@
 import { auth, connections, HiveClient, thrift, HiveUtils } from 'hive-driver'
 import IHiveSession from 'hive-driver/dist/contracts/IHiveSession'
+import { format } from 'sqlstring'
 
 const utils = new HiveUtils(thrift.TCLIService_types)
 
 export class HiveService {
   private session?: IHiveSession
 
-  async getCovidData(): Promise<unknown[]> {
+  async getCovidData(date = '12-08-2020'): Promise<unknown[]> {
     const session = await this.getSession()
 
-    const data = await session.executeStatement('SELECT * FROM processed', { runAsync: true })
+    const sql = format(
+      `
+      select country, cases, new_cases, new_cases_per_tweet, population, tweets
+      from processed
+      where day = ?
+    `,
+      [date]
+    )
+    const data = await session.executeStatement(sql, { runAsync: true })
 
     await utils.waitUntilReady(data, true)
     await utils.fetchAll(data)
     await data.close()
-
     const result = utils.getResult(data).getValue()
-    console.log(result)
-    return result
+
+    return result.map(
+      ({ country, cases, new_cases, new_cases_per_tweet, population, tweets }: Record<string, unknown>) => ({
+        country,
+        cases,
+        newCases: new_cases,
+        newCasesPerTweet: new_cases_per_tweet,
+        population,
+        tweets
+      })
+    )
   }
 
   private getSession(): Promise<IHiveSession> {

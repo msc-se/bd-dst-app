@@ -1,12 +1,15 @@
 <template>
   <div>
     <h1>Live tweets</h1>
-    <ul
-      v-for="([country, tweets], i) in Object.entries(countryTweets)"
-      :key="i"
-      v-text="`${country} - ${tweets}`"
-      style="padding: 0"
-    />
+    <div v-if="!error">
+      <ul
+        v-for="([country, tweets], i) in Object.entries(countryTweets)"
+        :key="i"
+        v-text="`${country} - ${tweets}`"
+        style="padding: 0"
+      />
+    </div>
+    <p v-else v-text="'Could not connect to server'" />
   </div>
 </template>
 
@@ -22,14 +25,12 @@ export default defineComponent({
   name: 'LiveTweets',
   setup() {
     const countryTweets = ref<Record<string, number>>({})
+    const error = ref(false)
 
     onMounted(() => {
-      try {
-        const connection = new WebSocket('ws://localhost:8000/live')
-        connection.onmessage = handleMessage
-      } catch (e) {
-        console.error('Could not connect to server')
-      }
+      const connection = new WebSocket('ws://localhost:8000/live')
+      connection.onerror = () => (error.value = true)
+      connection.onmessage = handleMessage
     })
 
     function handleMessage(message: MessageEvent): void {
@@ -40,7 +41,7 @@ export default defineComponent({
       } else countryTweets.value[payload.country] = payload.tweets
     }
 
-    return { countryTweets }
+    return { countryTweets, error }
   }
 })
 </script>

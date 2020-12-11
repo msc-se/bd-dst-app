@@ -1,6 +1,7 @@
 import express from 'express'
 import { HiveService } from 'src/HiveService'
 import expressWs from 'express-ws'
+import cors from 'cors'
 import { KafkaService, PayloadHandler } from 'src/KafkaService'
 
 const { app, getWss } = expressWs(express())
@@ -13,8 +14,17 @@ const onMessage: PayloadHandler = (payload) => {
 const hiveService = new HiveService()
 const kafkaService = new KafkaService(onMessage)
 
-app.get('/', async (req, res) => {
-  const data = await hiveService.getCovidData()
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+app.get('/historic', cors(), async (req, res) => {
+  const date = String(req.query.date)
+
+  if (isNaN(Date.parse(date))) {
+    res.sendStatus(400)
+    return
+  }
+
+  const data = await hiveService.getCovidData(date)
   res.send(data)
 })
 
@@ -25,8 +35,7 @@ app.ws('/live', (ws) => {
 
 app.listen(PORT, async () => {
   try {
-    await kafkaService.start()
-
+    // await kafkaService.start()
     // setTimeout(async () => await kafkaService.restart(), 10000)
   } catch (e) {
     console.error(e)

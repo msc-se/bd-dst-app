@@ -9,6 +9,7 @@
     "deploy": "cp -a dist/. /var/www/web-app/"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "dayjs": "^1.9.7",
     "vue": "^3.0.0"
