@@ -6,7 +6,6 @@
     "lib": [
       "es2018"
     ],
-    "composite": true,
     "declaration": true,
     "strict": true,
     "noImplicitAny": true,
@@ -21,12 +20,9 @@
     "inlineSources": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
+    "outDir": "dist",
     "baseUrl": ".",
-    "paths": {
-      "src/*": [
-        "src/*"
-      ]
-    },
+    "rootDir": "src",
     "types": [
       "node"
     ]

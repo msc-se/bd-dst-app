@@ -1,8 +1,8 @@
 import express from 'express'
-import { HiveService } from 'src/HiveService'
+import { HiveService } from './HiveService'
 import expressWs from 'express-ws'
 import cors from 'cors'
-import { KafkaService, PayloadHandler } from 'src/KafkaService'
+import { KafkaService, PayloadHandler } from './KafkaService'
 
 const { app, getWss } = expressWs(express())
 const PORT = 8000
@@ -16,7 +16,7 @@ const kafkaService = new KafkaService(onMessage)
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-app.get('/historic', cors(), async (req, res) => {
+app.get('/historical', cors(), async (req, res) => {
   const date = String(req.query.date)
 
   if (isNaN(Date.parse(date))) {

@@ -1,6 +1,6 @@
 <template>
   <div id="container">
-    <HistoricData id="historic-data" />
+    <HistoricalData id="historic-data" />
     <LiveTweets id="live-tweets" />
   </div>
 </template>
@@ -8,12 +8,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import LiveTweets from '@/components/LiveTweets.vue'
-import HistoricData from '@/components/HistoricData.vue'
+import HistoricalData from '@/components/HistoricalData.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
-    HistoricData,
+    HistoricalData,
     LiveTweets
   }
 })

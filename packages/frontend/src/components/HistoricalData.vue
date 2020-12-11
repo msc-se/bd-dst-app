@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Historic data</h1>
+    <h1>Historical data</h1>
     <label for="#date-select" v-text="'Select date: '" />
     <select id="#date-select" v-model="selectedDate">
       <option v-for="(date, i) in dates" :value="i" v-text="date" :key="i" />
@@ -28,7 +28,7 @@ export interface Metrics {
 }
 
 export default defineComponent({
-  name: 'HistoricData',
+  name: 'HistoricalData',
   components: { Chart },
   setup() {
     const startDate = dayjs('12-08-2020', 'MM-DD-YYYY')
@@ -48,7 +48,7 @@ export default defineComponent({
 
       try {
         isLoading.value = true
-        const response = await axios.get<Metrics[]>(`http://localhost:8000/historic`, { params: { date } })
+        const response = await axios.get<Metrics[]>(`http://localhost:8000/historical`, { params: { date } })
 
         return response.data
       } catch (e) {
