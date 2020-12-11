@@ -12,7 +12,7 @@ export class HiveService {
 
     const sql = format(
       `
-      select country, cases, new_cases, new_cases_per_tweet, population, tweets
+      select code3, country, cases, new_cases, new_cases_per_tweet, population, tweets
       from processed
       where day = ?
     `,
@@ -26,7 +26,8 @@ export class HiveService {
     const result = utils.getResult(data).getValue()
 
     return result.map(
-      ({ country, cases, new_cases, new_cases_per_tweet, population, tweets }: Record<string, unknown>) => ({
+      ({ code3, country, cases, new_cases, new_cases_per_tweet, population, tweets }: Record<string, unknown>) => ({
+        code: code3,
         country,
         cases,
         newCases: new_cases,

@@ -1,66 +1,62 @@
 <template>
-  <h1>Hive</h1>
-  <select id="#date-select" v-model="selectedMetric">
-    <option v-for="key in functionMap" :value="key[1]" v-text="key[0]" :key="key[0]" />
-  </select>
-  <div style="margin: auto; width: 640px" v-if="svg.legend" v-html="svg.legend"></div>
-  <div v-if="svg.map" v-html="svg.map"></div>
+  <div>
+    <select id="#date-select" v-model="selectedMetric">
+      <option v-for="(key, i) in functionMap" :value="key[1]" v-text="key[0]" :key="i" />
+    </select>
+    <div style="justify-content: center; display: flex; margin-bottom: 10px" v-if="svg.legend" v-html="svg.legend" />
+    <div v-if="svg.map" v-html="svg.map" />
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed } from 'vue'
-
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { computed, defineComponent, ref, toRefs } from 'vue'
 import * as d3 from 'd3'
-
 import world from '../assets/countries-50m.json'
-import data from '../assets/data.json'
 import * as topojson from 'topojson-client'
+import { Metrics } from '@/components/HistoricData.vue'
 
-interface Metric {
-  cases: number
-  new_cases: number
-  population: number
-  tweets: number
-  new_cases_per_tweet: number
-}
-
-interface graph {
+interface Graph {
   map?: string
   legend?: string
 }
 
-const functionMap = new Map<string, (entry: Metric) => number>([
+const functionMap = new Map<string, (entry: Metrics) => number>([
   ['Cases', (entry) => entry.cases],
-  ['New cases', (entry) => entry.new_cases],
+  ['New cases', (entry) => entry.newCases],
   ['Population', (entry) => entry.population],
   ['Tweets', (entry) => entry.tweets],
-  ['New cases / tweet', (entry) => entry.new_cases_per_tweet],
+  ['New cases / tweet', (entry) => entry.newCasesPerTweet],
   ['Cases / Population', (entry) => entry.cases / entry.population]
 ])
 
-export default defineComponent({
-  name: 'Hive',
-  setup() {
-    const mapped = new Map<string, Metric>(
-      data
-        .filter((key) => key.code3 != '-1')
-        .map((key) => [
-          format(key.code3),
-          {
-            cases: key.cases,
-            new_cases: key.new_cases,
-            population: key.population,
-            tweets: key.tweets,
-            new_cases_per_tweet: key.new_cases_per_tweet
-          }
-        ])
+interface Props {
+  metrics: Metrics[]
+}
+
+// @ts-ignore
+export default defineComponent<Props>({
+  name: 'Chart',
+  props: {
+    metrics: {
+      type: Array,
+      default: () => []
+    }
+  },
+  setup(props: Props) {
+    const metrics = toRefs(props).metrics
+    const mapped = computed(
+      () =>
+        new Map<string, Metrics>(
+          metrics.value.filter((metrics) => metrics.code != '-1').map((metrics) => [format(metrics.code), metrics])
+        )
     )
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const selectedMetric = ref(functionMap.get('Cases / Population')!)
 
-    const svg = computed<graph>(() => {
-      const { ll, map } = setupD3(mapped, selectedMetric.value)
+    const svg = computed<Graph>(() => {
+      const { ll, map } = setupD3(mapped.value, selectedMetric.value)
       return { map: map?.outerHTML, legend: ll?.outerHTML }
     })
 
@@ -69,19 +65,15 @@ export default defineComponent({
 })
 
 function format(id: string): string {
-  while (id.length < 3) {
-    id = '0' + id
-  }
+  while (id?.length < 3) id = '0' + id
+
   return id
 }
 
-function setupD3(mapped: Map<string, Metric>, entryMapper: (entry: Metric) => number) {
+function setupD3(mapped: Map<string, Metrics>, entryMapper: (entry: Metrics) => number) {
   let domain = [0]
-  for (let entry of mapped.values()) {
-    domain.push(entryMapper(entry))
-  }
+  for (let entry of mapped.values()) domain.push(entryMapper(entry))
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const countries = topojson.feature(world, world.objects.countries)
 
@@ -97,15 +89,8 @@ function setupD3(mapped: Map<string, Metric>, entryMapper: (entry: Metric) => nu
   projection.scale((projection.scale() * (l - 1)) / l).precision(0.2)
   const path = d3.geoPath(projection)
 
-  console.log(d3.extent(domain))
-
-  const color = d3
-    .scaleSequential()
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    .domain(d3.extent(domain))
-    .interpolator(d3.interpolateOrRd)
-    .unknown('#ccc')
+  // @ts-ignore
+  const color = d3.scaleSequential().domain(d3.extent(domain)).interpolator(d3.interpolateOrRd).unknown('#ccc')
 
   const svg = d3.create('svg').style('display', 'block').attr('viewBox', `0 0 ${width} ${height}`)
 
@@ -114,51 +99,42 @@ function setupD3(mapped: Map<string, Metric>, entryMapper: (entry: Metric) => nu
   defs
     .append('path')
     .attr('id', 'outline')
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     .attr('d', path({ type: 'Sphere' }))
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   defs.append('clipPath').attr('id', 'clip').append('use').attr('xlink:href', new URL('#outline', location))
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const g = svg.append('g').attr('clip-path', `url(${new URL('#clip', location)})`)
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  g.append('use').attr('xlink:href', new URL('#outline', location)).attr('fill', 'white')
+  g.append('use').attr('xlink:href', new URL('#outline', location)).attr('fill', '#3987c9')
 
-  let print = function (metric: Metric): string {
+  let print = function (metrics: Metrics): string {
     return (
-      `Cases: \t\t\t\t${metric.cases.toLocaleString()}\n` +
-      `New cases: \t\t${metric.new_cases.toLocaleString()}\n` +
-      `Population: \t\t${metric.population.toLocaleString()}\n` +
-      `Tweets: \t\t\t${metric.tweets.toLocaleString()}\n` +
-      `New Cases/Tweet: \t${metric.new_cases_per_tweet.toLocaleString()}`
+      `Cases: \t\t\t\t${metrics.cases.toLocaleString()}\n` +
+      `New cases: \t\t${metrics.newCases.toLocaleString()}\n` +
+      `Population: \t\t${metrics.population.toLocaleString()}\n` +
+      `Tweets: \t\t\t${metrics.tweets.toLocaleString()}\n` +
+      `New Cases/Tweet: \t${metrics.newCasesPerTweet.toLocaleString()}`
     )
   }
 
   g.append('g')
     .selectAll('path')
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     .data(countries.features)
     .join('path')
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     .attr('fill', (d) => color(mapped.has(d.id) ? entryMapper(mapped.get(d.id)) : undefined))
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     .attr('d', path)
     .append('title')
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     .text((d) => `${d.properties.name} \n${mapped.has(d.id) ? print(mapped.get(d.id)) : 'N/A'}`)
 
   g.append('path')
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     .datum(topojson.mesh(world, world.objects.countries, (a, b) => a !== b))
     .attr('fill', 'none')
@@ -166,11 +142,9 @@ function setupD3(mapped: Map<string, Metric>, entryMapper: (entry: Metric) => nu
     .attr('stroke-linejoin', 'round')
     .attr('d', path)
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   svg.append('use').attr('xlink:href', new URL('#outline', location)).attr('fill', 'none').attr('stroke', 'black')
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const ll = legend({ color, title: 'Color' })
 
@@ -178,16 +152,12 @@ function setupD3(mapped: Map<string, Metric>, entryMapper: (entry: Metric) => nu
 }
 
 function legend({
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   color,
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   title,
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   tickSize = 6,
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   width = 640,
   height = 44 + tickSize,
@@ -196,10 +166,8 @@ function legend({
   marginBottom = 16 + tickSize,
   marginLeft = 0,
   ticks = width / 128,
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   tickFormat,
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   tickValues
 } = {}) {
@@ -207,7 +175,7 @@ function legend({
     .create('svg')
     .attr('width', width)
     .attr('height', height)
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
     // @ts-ignore
     .attr('viewBox', [0, 0, width, height])
     .style('overflow', 'visible')
@@ -218,9 +186,7 @@ function legend({
   // Continuous
   if (color.interpolator) {
     x = Object.assign(color.copy().interpolator(d3.interpolateRound(marginLeft, width - marginRight)), {
-      range() {
-        return [marginLeft, width - marginRight]
-      }
+      range: () => [marginLeft, width - marginRight]
     })
 
     svg
@@ -232,7 +198,7 @@ function legend({
       .attr('preserveAspectRatio', 'none')
       .attr('xlink:href', ramp(color.interpolator()).toDataURL())
 
-    // scaleSequentialQuantile doesn’t implement ticks or tickFormat.
+    // scaleSequentialQuantile doesn't implement ticks or tickFormat.
     if (!x.ticks) {
       if (tickValues === undefined) {
         const n = Math.round(ticks + 1)
@@ -270,10 +236,8 @@ function legend({
   return svg.node()
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 function ramp(color, n = 256) {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const canvas = document.createElement('canvas')
   canvas.setAttribute('width', n.toString())

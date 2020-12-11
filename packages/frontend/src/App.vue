@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import LiveTweets from './components/LiveTweets.vue'
+import LiveTweets from '@/components/LiveTweets.vue'
 import HistoricData from '@/components/HistoricData.vue'
 
 export default defineComponent({
@@ -37,5 +37,10 @@ export default defineComponent({
 
 #live-tweets {
   width: 200px;
+}
+
+#historic-data {
+  width: 100%;
+  margin-right: 20px;
 }
 </style>
