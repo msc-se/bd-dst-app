@@ -36,7 +36,6 @@ app.ws('/live', (ws) => {
 app.listen(PORT, async () => {
   try {
     await kafkaService.start()
-    // setTimeout(async () => await kafkaService.restart(), 10000)
   } catch (e) {
     console.error(e)
   }

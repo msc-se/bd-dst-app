@@ -14,5 +14,6 @@ This exposes a websocket connection through which the API broadcasts live data a
 ## Usage
 
 To run in a production environment, build the application by running `npm run build`.
-Afterwards, start the server through `pm2` with `npm run start`, which runs the following command: `pm2 start dist/app.js --name api`.
+Afterwards, start the server through `pm2` with `npm run start`, which runs the following command:
+`pm2 start dist/app.js --name api --cron "0 0 * * *"`.
 If not installed already, `pm2` should be installed globally like so: `npm install pm2@latest -g`.

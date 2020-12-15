@@ -10,7 +10,6 @@ export type PayloadHandler = (payload: TweetPayload | TweetPayload[]) => void
 export class KafkaService {
   private readonly topic = 'processed-tweets'
   private readonly onMessage: PayloadHandler
-  private readonly onRestart: PayloadHandler
   private readonly kafka = new Kafka({
     clientId: 'express-api',
     brokers: ['node-master:9092', 'node1:9092', 'node2:9092']
@@ -20,9 +19,8 @@ export class KafkaService {
   private currentDate = new Date().setHours(0, 0, 0, 0)
   private startedAt = Date.now()
 
-  constructor(onMessage: PayloadHandler, onRestart?: PayloadHandler) {
+  constructor(onMessage: PayloadHandler) {
     this.onMessage = onMessage
-    this.onRestart = onRestart ?? onMessage
     this.consumer = this.kafka.consumer({ groupId: 'test-group' })
   }
 
@@ -57,15 +55,6 @@ export class KafkaService {
     return this.consumer.disconnect()
   }
 
-  restart(): Promise<void> {
-    console.log('Restarting KafkaService')
-    this.currentDate = new Date().setHours(0, 0, 0, 0)
-    this.startedAt = Date.now()
-    this._countryTweets.forEach((_, key) => this._countryTweets.set(key, 0))
-    this.onRestart(this.countryTweets)
-    return this.stop().then(() => this.start())
-  }
-
   private async handleMessage({ message }: EachMessagePayload): Promise<void> {
     const payload = KafkaService.parseMessage(message)
 
@@ -73,11 +62,6 @@ export class KafkaService {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       this._countryTweets.set(payload.country, this._countryTweets.get(payload.country)! + payload.tweets)
     } else this._countryTweets.set(payload.country, payload.tweets)
-
-    if (new Date(this.currentDate).toDateString() !== new Date(Number(message.timestamp)).toDateString()) {
-      console.log('Date has progressed')
-      return this.restart()
-    }
 
     payload.tweets = this._countryTweets.get(payload.country) ?? payload.tweets
 

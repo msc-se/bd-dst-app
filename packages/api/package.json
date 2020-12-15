@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only --no-deps -r tsconfig-paths/register src/app.ts",
     "build": "tsc",
-    "start": "pm2 start dist/app.js --name api",
+    "start": "pm2 start dist/app.js --name api --cron \"0 0 * * *\"",
     "start:debug": "npm run start -- --no-daemon"
   },
   "dependencies": {
