@@ -62,7 +62,7 @@ export default defineComponent({
     function generateDates(startDate: dayjs.Dayjs): string[] {
       const daysSinceStart = dayjs().diff(startDate, 'day')
       const days: dayjs.Dayjs[] = []
-      for (let i = 0; i <= daysSinceStart; i++) days.push(startDate.clone().add(i, 'day'))
+      for (let i = 0; i < daysSinceStart; i++) days.push(startDate.clone().add(i, 'day'))
 
       return days.map((day) => day.format('MMMM D, YYYY'))
     }
