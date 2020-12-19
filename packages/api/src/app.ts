@@ -9,7 +9,13 @@ const { app } = expressWs(express())
 const PORT = 8000
 
 const onMessage: PayloadHandler = (payload) => {
-  for (const [, ws] of liveDataClients) ws.send(JSON.stringify(payload))
+  for (const [timestamp, ws] of liveDataClients) {
+    try {
+      ws.send(JSON.stringify(payload))
+    } catch (e) {
+      liveDataClients.delete(timestamp)
+    }
+  }
 }
 
 const hiveService = new HiveService()
@@ -32,7 +38,13 @@ app.get('/historical', cors(), async (req, res) => {
 })
 
 function wordCountStatusHandler(payload: unknown): void {
-  for (const [, ws] of wordCountClients) ws.send(JSON.stringify(payload))
+  for (const [timestamp, ws] of wordCountClients) {
+    try {
+      ws.send(JSON.stringify(payload))
+    } catch (e) {
+      wordCountClients.delete(timestamp)
+    }
+  }
 }
 
 // @ts-ignore

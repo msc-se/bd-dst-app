@@ -5,9 +5,9 @@
     <div v-else-if="selectedMetrics.length > 0">
       <h2>Global</h2>
       <p>
-        Population: {{ globalMetrics.population.toLocaleString() }}, cases: {{ globalMetrics.cases.toLocaleString() }},
-        new cases: {{ globalMetrics.newCases.toLocaleString() }}, new cases per tweet:
-        {{ globalMetrics.newCasesPerTweet.toLocaleString() }}, tweets:
+        <b>Population:</b> {{ globalMetrics.population.toLocaleString() }}, <b>cases:</b>
+        {{ globalMetrics.cases.toLocaleString() }}, <b>new cases:</b> {{ globalMetrics.newCases.toLocaleString() }},
+        <b>new cases per tweet:</b> {{ globalMetrics.newCasesPerTweet.toLocaleString() }}, <b>tweets:</b>
         {{ globalMetrics.tweets.toLocaleString() }}
       </p>
       <Chart :metrics="selectedMetrics" style="margin-top: 20px" />
