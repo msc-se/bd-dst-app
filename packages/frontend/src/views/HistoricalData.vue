@@ -2,7 +2,16 @@
   <div>
     <DateSelect v-model:date="selectedDate" />
     <h2 v-if="isLoading">Loading...</h2>
-    <Chart v-else-if="selectedMetrics.length > 0" :metrics="selectedMetrics" style="margin-top: 20px" />
+    <div v-else-if="selectedMetrics.length > 0">
+      <h2>Global</h2>
+      <p>
+        Population: {{ globalMetrics.population.toLocaleString() }}, cases: {{ globalMetrics.cases.toLocaleString() }},
+        new cases: {{ globalMetrics.newCases.toLocaleString() }}, new cases per tweet:
+        {{ globalMetrics.newCasesPerTweet.toLocaleString() }}, tweets:
+        {{ globalMetrics.tweets.toLocaleString() }}
+      </p>
+      <Chart :metrics="selectedMetrics" style="margin-top: 20px" />
+    </div>
     <h2 v-else>No data available for selected date</h2>
   </div>
 </template>
@@ -34,6 +43,7 @@ export default defineComponent({
     const selectedDate = ref(startDate.format('MM-DD-YYYY'))
     const metrics = reactive(new Map<string, Metrics[]>())
     const selectedMetrics = computed(() => metrics.get(selectedDate.value) ?? [])
+    const globalMetrics = computed(() => selectedMetrics.value.find(({ code }) => code === '-1'))
 
     onMounted(() => {
       if (!metrics.has(selectedDate.value))
@@ -66,7 +76,7 @@ export default defineComponent({
       return days.map((day) => day.format('MMMM D, YYYY'))
     }
 
-    return { selectedDate, dates, selectedMetrics, isLoading }
+    return { selectedDate, dates, selectedMetrics, isLoading, globalMetrics }
   }
 })
 </script>

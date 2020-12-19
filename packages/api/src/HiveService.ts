@@ -49,30 +49,36 @@ export class HiveService {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private async executeStatement(sql: string, statusHandler?: (payload: unknown) => void): Promise<any> {
-    const session = await this.getSession()
     let isDone = false
+    try {
+      const session = await this.getSession()
 
-    const operation = await session.executeStatement(sql, { runAsync: true })
+      const operation = await session.executeStatement(sql, { runAsync: true })
 
-    const poll = async () => {
-      try {
-        const result = await operation.status(true) //.then((result) => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const status = JSON.parse(result.taskStatus!)[0]
-        if (statusHandler) statusHandler(status)
-        if (!isDone) setTimeout(poll, 100)
-      } catch (e) {}
+      const poll = async () => {
+        try {
+          const result = await operation.status(true) //.then((result) => {
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          const status = JSON.parse(result.taskStatus!)[0]
+          if (statusHandler) statusHandler(status)
+          if (!isDone) setTimeout(poll, 100)
+        } catch (e) {}
+      }
+
+      if (statusHandler) poll().catch((e) => console.error(e))
+
+      await utils.waitUntilReady(operation, true)
+      await utils.fetchAll(operation)
+
+      isDone = true
+      await operation.close()
+
+      return utils.getResult(operation).getValue()
+    } catch (e) {
+      console.error(e)
+    } finally {
+      isDone = true
     }
-
-    if (statusHandler) poll().catch((e) => console.error(e))
-
-    await utils.waitUntilReady(operation, true)
-    await utils.fetchAll(operation)
-
-    isDone = true
-    await operation.close()
-
-    return utils.getResult(operation).getValue()
   }
 
   private async getSession(): Promise<IHiveSession> {
