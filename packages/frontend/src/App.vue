@@ -1,21 +1,19 @@
 <template>
-  <div id="container">
-    <HistoricalData id="historic-data" />
-    <LiveTweets id="live-tweets" />
+  <div id="nav">
+    <RouterLink to="/">Historical Data</RouterLink>
+    |
+    <RouterLink to="/word-cloud">Word Cloud</RouterLink>
+    |
+    <RouterLink to="/live-tweets">Live Tweets</RouterLink>
   </div>
+  <RouterView />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import LiveTweets from '@/components/LiveTweets.vue'
-import HistoricalData from '@/components/HistoricalData.vue'
 
 export default defineComponent({
-  name: 'App',
-  components: {
-    HistoricalData,
-    LiveTweets
-  }
+  name: 'App'
 })
 </script>
 
@@ -26,21 +24,18 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin: 0 40px;
 }
 
-#container {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
+#nav {
+  padding: 30px;
 }
 
-#live-tweets {
-  width: 200px;
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
 }
 
-#historic-data {
-  width: 100%;
-  margin-right: 20px;
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>

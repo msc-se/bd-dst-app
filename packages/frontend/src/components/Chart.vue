@@ -14,7 +14,7 @@ import { computed, defineComponent, ref, toRefs } from 'vue'
 import * as d3 from 'd3'
 import world from '../assets/countries-50m.json'
 import * as topojson from 'topojson-client'
-import { Metrics } from '@/components/HistoricalData.vue'
+import { Metrics } from '@/views/HistoricalData.vue'
 
 interface Graph {
   map?: string

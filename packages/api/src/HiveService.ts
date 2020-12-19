@@ -1,4 +1,4 @@
-import { auth, connections, HiveClient, thrift, HiveUtils } from 'hive-driver'
+import { auth, connections, HiveClient, HiveUtils, thrift } from 'hive-driver'
 import IHiveSession from 'hive-driver/dist/contracts/IHiveSession'
 import { format } from 'sqlstring'
 
@@ -8,8 +8,6 @@ export class HiveService {
   private session?: IHiveSession
 
   async getCovidData(date = '12-08-2020'): Promise<unknown[]> {
-    const session = await this.getSession()
-
     const sql = format(
       `
       select code3, country, cases, new_cases, new_cases_per_tweet, population, tweets
@@ -18,12 +16,7 @@ export class HiveService {
     `,
       [date]
     )
-    const data = await session.executeStatement(sql, { runAsync: true })
-
-    await utils.waitUntilReady(data, true)
-    await utils.fetchAll(data)
-    await data.close()
-    const result = utils.getResult(data).getValue()
+    const result = await this.executeStatement(sql)
 
     return result.map(
       ({ code3, country, cases, new_cases, new_cases_per_tweet, population, tweets }: Record<string, unknown>) => ({
@@ -38,25 +31,75 @@ export class HiveService {
     )
   }
 
-  private getSession(): Promise<IHiveSession> {
+  async getWordCount(date = '12-18-2020', handler: (payload: unknown) => void): Promise<unknown[]> {
+    const sql = format(
+      `
+      select count, word
+      from wordcount
+      where day = ?
+      and length(word) > '4'
+      order by count desc
+      limit 100
+    `,
+      [date]
+    )
+
+    return this.executeStatement(sql, handler)
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private async executeStatement(sql: string, statusHandler?: (payload: unknown) => void): Promise<any> {
+    const session = await this.getSession()
+    let isDone = false
+
+    const operation = await session.executeStatement(sql, { runAsync: true })
+
+    const poll = async () => {
+      try {
+        const result = await operation.status(true) //.then((result) => {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const status = JSON.parse(result.taskStatus!)[0]
+        if (statusHandler) statusHandler(status)
+        if (!isDone) setTimeout(poll, 100)
+      } catch (e) {}
+    }
+
+    if (statusHandler) poll().catch((e) => console.error(e))
+
+    await utils.waitUntilReady(operation, true)
+    await utils.fetchAll(operation)
+
+    isDone = true
+    await operation.close()
+
+    return utils.getResult(operation).getValue()
+  }
+
+  private async getSession(): Promise<IHiveSession> {
     if (this.session) return Promise.resolve(this.session)
+    const configuration = {
+      'mapred.job.queue.name': 'batch',
+      'mapreduce.map.memory.mb': '512',
+      'mapreduce.reduce.memory.mb': '512',
+      'yarn.app.mapreduce.am.resource.mb': '512',
+      'yarn.app.mapreduce.am.command-opts': '-Xmx400M'
+    }
 
-    return new HiveClient(thrift.TCLIService, thrift.TCLIService_types)
-      .connect(
-        {
-          host: 'localhost',
-          port: 10000
-        },
-        new connections.TcpConnection(),
-        new auth.NoSaslAuthentication()
-      )
-      .then(async (client) => {
-        const session = await client.openSession({
-          client_protocol: thrift.TCLIService_types.TProtocolVersion.HIVE_CLI_SERVICE_PROTOCOL_V10
-        })
-        this.session = session
+    const client = await new HiveClient(thrift.TCLIService, thrift.TCLIService_types).connect(
+      {
+        host: 'localhost',
+        port: 10000
+      },
+      new connections.TcpConnection(),
+      new auth.NoSaslAuthentication()
+    )
+    const session = await client.openSession({
+      client_protocol: thrift.TCLIService_types.TProtocolVersion.HIVE_CLI_SERVICE_PROTOCOL_V10,
+      configuration
+    })
 
-        return session
-      })
+    this.session = session
+
+    return session
   }
 }

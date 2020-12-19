@@ -5,7 +5,7 @@ export interface TweetPayload {
   tweets: number
 }
 
-export type PayloadHandler = (payload: TweetPayload | TweetPayload[]) => void
+export type PayloadHandler = (payload: unknown) => void
 
 export class KafkaService {
   private readonly topic = 'processed-tweets'

@@ -1,10 +1,6 @@
 <template>
   <div>
-    <h1>Historical data</h1>
-    <label for="#date-select" v-text="'Select date: '" />
-    <select id="#date-select" v-model="selectedDate">
-      <option v-for="(date, i) in dates" :value="i" v-text="date" :key="i" />
-    </select>
+    <DateSelect v-model:date="selectedDate" />
     <h2 v-if="isLoading">Loading...</h2>
     <Chart v-else-if="selectedMetrics.length > 0" :metrics="selectedMetrics" style="margin-top: 20px" />
     <h2 v-else>No data available for selected date</h2>
@@ -12,10 +8,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watch, onMounted, computed } from 'vue'
+import { defineComponent, ref, watch, onMounted, computed, reactive } from 'vue'
 import dayjs from 'dayjs'
 import axios from 'axios'
 import Chart from '@/components/Chart.vue'
+import DateSelect from '@/components/DateSelect.vue'
 
 export interface Metrics {
   code: string
@@ -29,23 +26,25 @@ export interface Metrics {
 
 export default defineComponent({
   name: 'HistoricalData',
-  components: { Chart },
+  components: { Chart, DateSelect },
   setup() {
     const startDate = dayjs('12-08-2020', 'MM-DD-YYYY')
     const isLoading = ref(true)
     const dates = ref(generateDates(startDate))
-    const selectedDate = ref(0)
-    const metrics = ref(new Map<number, Metrics[]>())
-    const selectedMetrics = computed(() => metrics.value.get(selectedDate.value) ?? [])
+    const selectedDate = ref(startDate.format('MM-DD-YYYY'))
+    const metrics = reactive(new Map<string, Metrics[]>())
+    const selectedMetrics = computed(() => metrics.get(selectedDate.value) ?? [])
 
-    onMounted(async () => metrics.value.set(selectedDate.value, await getData(selectedDate.value)))
-    watch(selectedDate, async (value) => {
-      if (!metrics.value.has(value)) metrics.value.set(value, await getData(value))
+    onMounted(() => {
+      if (!metrics.has(selectedDate.value))
+        getData(selectedDate.value).then((data) => metrics.set(selectedDate.value, data))
     })
 
-    async function getData(dateIndex: number): Promise<Metrics[]> {
-      const date = startDate.clone().add(dateIndex, 'day').format('MM-DD-YYYY')
+    watch(selectedDate, async (value) => {
+      if (!metrics.has(value)) metrics.set(value, await getData(value))
+    })
 
+    async function getData(date: string): Promise<Metrics[]> {
       try {
         isLoading.value = true
         const response = await axios.get<Metrics[]>(`http://localhost:8000/historical`, { params: { date } })
