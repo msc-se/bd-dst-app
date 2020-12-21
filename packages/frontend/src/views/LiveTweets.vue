@@ -1,7 +1,11 @@
 <template>
   <div>
     <div id="tweets" v-if="!error" style="columns: 3">
-      <div v-for="([country, tweets], i) in Object.entries(countryTweets)" :key="i" v-text="`${country}: ${tweets}`" />
+      <div
+        v-for="([country, tweets], i) in Object.entries(countryTweets)"
+        :key="i"
+        v-text="`${country}: ${tweets.toLocaleString()}`"
+      />
     </div>
     <p v-else v-text="'Could not connect to server'" />
   </div>
