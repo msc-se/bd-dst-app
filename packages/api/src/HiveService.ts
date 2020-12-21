@@ -38,6 +38,7 @@ export class HiveService {
       from wordcount
       where day = ?
       and length(word) > '4'
+      and word not like 'http%'
       order by count desc
       limit 100
     `,
