@@ -51,11 +51,4 @@ export default defineComponent({
 #tweets div {
   margin-bottom: 15px;
 }
-
-/*.tweet ul {*/
-/*  margin: 0 auto;*/
-/*  text-align: center;*/
-/*  columns: 3;*/
-/*  display: inline-block;*/
-/*}*/
 </style>
